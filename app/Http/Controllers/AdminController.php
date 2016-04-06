@@ -19,6 +19,11 @@ class AdminController extends Controller
     	return view('pages.admin.registerInstitution');
     }
 
+    public function getStatMenuPage(){
+
+        return view('pages.admin.statisticsPages.statMenu');
+    }
+
     public function getNotificationPage(){
 
         return view('pages.admin.notificationPages.insertNotification');
