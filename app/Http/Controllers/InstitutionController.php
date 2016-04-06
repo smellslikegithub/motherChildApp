@@ -1,80 +1,78 @@
-<?php
+    <?php
 
-namespace App\Http\Controllers;
+    namespace App\Http\Controllers;
 
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Illuminate\Http\Request;
+    use Symfony\Component\HttpFoundation\File\UploadedFile;
+    use Illuminate\Http\Request;
 
-use App\Http\Requests;
+    use App\Http\Requests;
 
-use DB;
+    use DB;
 
-use App\Log;
-use App\User;
-use App\Child;
-use App\Mother;
-use App\Disease;
-use App\Notification;
-use App\MotherDisease;
+    use App\Log;
+    use App\User;
+    use App\Child;
+    use App\Mother;
+    use App\Disease;
+    use App\Notification;
+    use App\MotherDisease;
 
-use Carbon\Carbon;
-
-
-class InstitutionController extends Controller
-{   
-
- public function upload(Request $request,$filedName){
-  $destinationPath='motherPictures/';
-
-  if ($request->hasFile($filedName)) {
-   $extention=$request->file($filedName)->getClientOriginalExtension();
-//$org_name_image_1=$request->file('image_1')->getClientOriginalName();
-   $name=time().'_'.$filedName.'.'.$extention;
-   $request->file($filedName)->move($destinationPath, $name);
-   return $name;            
-}
-return 'Null';
-
-}
-
-public function getMothersInfo(){
-    $afterJoin = DB::table('mothers')  
-    ->join('users', 'users.foreignId', '=', 'mothers.id')
-    ->select('users.*', 'mothers.*')
-    ->get();
-    $getContent = $afterJoin;
-
-    return view('pages.institute.motherPages.showMotherInfo', compact('getContent'));
-}
+    use Carbon\Carbon;
 
 
+    class InstitutionController extends Controller
+    {   
 
-public function getRegisterMother(){
-    return view('pages.institute.motherPages.registerMother');
-}
+       public function upload(Request $request,$filedName){
+          $destinationPath='motherPictures/';
 
-public function postRegisterMother(Request $request){
+          if ($request->hasFile($filedName)) {
+             $extention=$request->file($filedName)->getClientOriginalExtension();
+    //$org_name_image_1=$request->file('image_1')->getClientOriginalName();
+             $name=time().'_'.$filedName.'.'.$extention;
+             $request->file($filedName)->move($destinationPath, $name);
+             return $name;            
+         }
+         return 'Null';
 
-    $newMother = $request->all();
+     }
 
-    $motherImage = $this->upload($request,'pic1');
+     public function getMothersInfo(){
+        $afterJoin = DB::table('mothers')  
+        ->join('users', 'users.foreignId', '=', 'mothers.id')
+        ->select('users.*', 'mothers.*')
+        ->get();
+        $getContent = $afterJoin;
 
-    $forId = User::selectRaw('foreignId')->orderBy('foreignId','desc')->get()->first();
-
-    if(!$forId->foreignId){
-        $forId->foreignId = 1;
-        $newMother['foreignId'] = $forId->foreignId;
-    }
-    else if($forId->foreignId == 0){
-        $forId->foreignId = 1;
-        $newMother['foreignId'] = $forId->foreignId;
-    }
-    else{
-        $newMother['foreignId'] = $forId->foreignId + 1;
+        return view('pages.institute.motherPages.showMotherInfo', compact('getContent'));
     }
 
+
+
+    public function getRegisterMother(){
+        return view('pages.institute.motherPages.registerMother');
+    }
+
+    public function postRegisterMother(Request $request){
+
+        $newMother = $request->all();
+
+        $motherImage = $this->upload($request,'pic1');
+
+        $forId = User::selectRaw('foreignId')->orderBy('foreignId','desc')->get()->first();
+
+        if(!$forId->foreignId){
+            $forId->foreignId = 1;
+            $newMother['foreignId'] = $forId->foreignId;
+        }
+        else if($forId->foreignId == 0){
+            $forId->foreignId = 1;
+            $newMother['foreignId'] = $forId->foreignId;
+        }
+        else{
+            $newMother['foreignId'] = $forId->foreignId + 1;
+        }
 //Input into database
-
         Mother::create([
             'id' => $newMother['foreignId'],
             'latitude'=>$newMother['latitude'],
@@ -89,7 +87,7 @@ public function postRegisterMother(Request $request){
             'blood_group' => $newMother['blood_group'],
             'weight' => $newMother['weight'],
             'picture' => $motherImage
-        ]);
+            ]);
 
         User::create([
             'name' => $newMother['name'],
@@ -100,7 +98,7 @@ public function postRegisterMother(Request $request){
             'role' => 3,
             'registered_by' => \Auth::user()->name,
             'foreignId' => $newMother['foreignId']
-        ]);
+            ]);
 
         $newMother['registered_by'] = \Auth::user()->name;
 
@@ -115,16 +113,13 @@ public function postRegisterMother(Request $request){
     public function postAddDisease(Request $request){
         $disease = $request->all();
         print_r($disease);
-
 //INPUT MOTHER'S DISEASE
-/*
         MotherDisease::create([
             'mother_id' => $disease['mother_id'],
             'disease_id' => $disease['disease'],
             'date_diagnosed' => $disease['date_diagnosed'],
             'situation' => $disease['situation']
         ]);
-*/
         return "Added Disease";
     }
 
@@ -145,7 +140,6 @@ public function postRegisterMother(Request $request){
 
         print_r($child);
 //INPUT CHILD
-/*
         Child::create([
             'id' =>$child['id'],
             'mothers_id' =>$child['mothers_id'],
@@ -155,10 +149,10 @@ public function postRegisterMother(Request $request){
             'birthCertNo' =>$child['birthCertNo'],
             'blood_group' =>$child['blood_group']
         ]);
-*/
         return "Added Child";
-
     }
+
+    
 
     public function getEndRegistration($id){
         $mother = Mother::where('id', $id)->get()->last();
@@ -167,7 +161,7 @@ public function postRegisterMother(Request $request){
         if($mother->days_pregnant){
 
             $mothersNotifications = Notification::where('category', 'mother')->where('notif_day', '>=', $mother->days_pregnant)->get();
-            
+
             foreach($mothersNotifications as $notification){
 
                 $date = Carbon::today();
@@ -175,7 +169,7 @@ public function postRegisterMother(Request $request){
                 $date = $date->addDays($days);
 
                 $date = $date->toDateString();
-/*
+//CREATE EACH OF MOTHERS NOTIFICATIONS
                 Log::create([
                     'mother_id' => $mother->id,
                     'notif_id' => $notification->id,
@@ -184,7 +178,6 @@ public function postRegisterMother(Request $request){
                     'notif_priority' => $notification->priority,
                     'send_date' => $date,
                 ]);
-*/
             }
         }
 
@@ -197,7 +190,7 @@ public function postRegisterMother(Request $request){
 
             $date = $date->addDays($days);
             $date = $date->toDateString();
-/*
+//CREATE EACH OF CHILDS NOTIFICATIONS
             Log::create([
                 'mother_id' => $mother->id,
                 'child_id' => $child->id,
@@ -207,7 +200,6 @@ public function postRegisterMother(Request $request){
                 'notif_priority' => $notification->priority,
                 'send_date' => $date,
             ]);
-*/
         }
     }
 }
