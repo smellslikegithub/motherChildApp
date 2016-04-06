@@ -62,7 +62,7 @@
               <ul class="treeview-menu">
                 
               
-               <li><a href="{{url::to('/admin/notification-page')}}"><i class = "fa fa-circle" >Show Statistics </i></a></li>
+               <li><a href="{{url::to('/admin/stat-menu-page')}}"><i class = "fa fa-circle" >Show Statistics </i></a></li>
               </ul>
             </li>
            
