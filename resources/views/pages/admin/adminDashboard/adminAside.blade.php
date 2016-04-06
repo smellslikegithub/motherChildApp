@@ -48,8 +48,24 @@
               <ul class="treeview-menu">
                 
                <li><a href="{{url::to('/admin/notification-page')}}"><i class = "fa fa-circle" > Insert Notification </i></a></li>
+
+               <li><a href="{{url::to('/admin/notification-page')}}"><i class = "fa fa-circle" >Show Statistics </i></a></li>
               </ul>
             </li>
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-th"></i>
+                <span>Statistics</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                
+              
+               <li><a href="{{url::to('/admin/notification-page')}}"><i class = "fa fa-circle" >Show Statistics </i></a></li>
+              </ul>
+            </li>
+           
            
             
            
