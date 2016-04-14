@@ -16,6 +16,7 @@ class CreateLogTable extends Migration
             $table->increments('id');
             $table->integer('mother_id');
             $table->integer('child_id')->nullable();
+            $table->string('phone_number');
             $table->integer('notif_id');
             $table->string('notif_msg');
             $table->string('notif_category');

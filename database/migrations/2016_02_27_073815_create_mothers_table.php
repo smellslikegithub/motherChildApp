@@ -17,6 +17,8 @@ class CreateMothersTable extends Migration
             $table->string('address');
             $table->string('latitude');
             $table->string('longitude');
+            $table->string('district');
+            $table->string('division');
             //$table->boolean('expecting_baby'); --> not required
             $table->string('nIdNumber')->unique(); 
             $table->string('alt_nc_id')->unique();

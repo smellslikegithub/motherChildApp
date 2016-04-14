@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Log extends Model
 {
-    protected $table = 'mothers';
+    protected $table = 'log';
 
 	protected $fillable = [
 		'mother_id',

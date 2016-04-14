@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
-				<div class="panel-heading">Register Institute</div>
+				<div class="panel-heading">Register Mother</div>
 				<div class="panel-body">
 					<form class="form-horizontal" role="form" files = "true" enctype = "multipart/form-data" method="POST" action="{{ url('institute/register-mother') }}">
 
@@ -189,6 +189,44 @@
 								<!--shoikoth End-->
 							</div>
 
+
+							
+							<div class="form-group">
+								<label class="col-md-4 control-label"> District </label>
+
+								<div class="col-md-6">
+									<select class="form-control" name="district">
+										<option>District 1</option>
+										<option>District 2</option>
+										<option>District 3</option>
+										<option>District 4</option>
+										<option>District 5</option>
+										<option>District 6</option>
+										<option>District 7</option>
+										<option>District 8</option>
+										<option>District 9</option>
+										<option>District 10</option>
+									</select>
+								</div>
+							</div>
+
+
+
+							<div class="form-group">
+								<label class="col-md-4 control-label">Division</label>
+
+								<div class="col-md-6">
+									<select class="form-control" name="division">
+										<option>Division 1</option>
+										<option>Division 2</option>
+										<option>Division 3</option>
+										<option>Division 4</option>
+										<option>Division 5</option>
+										<option>Division 6</option>
+										<option>Division 7</option>
+									</select>
+								</div>
+							</div>
 
 							<div class="form-group">
 								<label class="col-md-4 control-label">National ID</label>

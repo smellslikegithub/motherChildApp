@@ -13,6 +13,8 @@ class Mother extends Model
 		'address',
 		'latitude',
 		'longitude',
+		'district',
+		'division',
 		'nIdNumber',
 		'alt_nc_id',
 		'nc_holders_name',
