@@ -39,6 +39,11 @@
 
     <script src="{{asset('js/moment.min.js')}}"></script>
 
+    <!-- for our date picker start -->
+    <script src="{{asset('js/jquery-1.10.2.js')}}"></script>
+	<script src="{{asset('js/jquery-ui.js')}}"></script>
+	<!-- for our date picker end -->
+
 
 
     <script src="{{asset('plugins/daterangepicker/daterangepicker.js')}}"></script>

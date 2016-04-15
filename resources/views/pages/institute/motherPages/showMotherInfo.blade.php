@@ -46,12 +46,12 @@
 				                        </td>
 				                        <td>
 				                        	
-				                        	<a href="{{url('services/editServices',$data->id)}}" class="btn btn-block btn-primary btn-primary"><span class="	glyphicon glyphicon-pencil"></span> Edit</a>
+				                        	<a href="{{url('services/editServices',$data->id)}}" class="btn btn-block btn-primary btn-primary"><span class="	glyphicon glyphicon-pencil"></span> View/Edit</a>
 				                        </td>
 
 				                        <td>
 				                        	
-				                        	<a href="{{url('services/showServices',$data->id)}}" class="btn btn-block btn-primary btn-info"><span class="glyphicon glyphicon-eye-open"></span> View</a>
+				                        	
 				                        </td>
 				                    </tr>
 				                    <?php $i++?> <?php $counter++ ?>
