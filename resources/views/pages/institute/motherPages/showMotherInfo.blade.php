@@ -46,7 +46,7 @@
 				                        </td>
 				                        <td>
 				                        	
-				                        	<a href="{{url('services/editServices',$data->id)}}" class="btn btn-block btn-primary btn-primary"><span class="	glyphicon glyphicon-pencil"></span> View/Edit</a>
+				                        	<a href="{{url('institute/specific-mother-info',$data->id)}}" class="btn btn-block btn-primary btn-primary"><span class="	glyphicon glyphicon-pencil"></span> View/Edit</a>
 				                        </td>
 
 				                        <td>

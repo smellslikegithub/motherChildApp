@@ -241,6 +241,12 @@
 	</div>
 </div>
 
+<!--Moving this to the js file collection causes problem. Start-->
+
+<script src="{{asset('js/jquery-1.10.2.js')}}"></script>
+<script src="{{asset('js/jquery-ui.js')}}"></script>
+<!--Moving this to the js file collection causes problem. End-->
+
 <script type="text/javascript">
 	$("#date_diagnosed").datepicker({ dateFormat: 'yy-mm-dd' });
 	$("#dob").datepicker({ dateFormat: 'yy-mm-dd' });

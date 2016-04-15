@@ -1,17 +1,23 @@
 @extends('layouts.Institute.dashboard.dashboard')
+
 @section('content')
-<div class="container">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading">Register Mother</div>
-				<div class="panel-body">
-					<form class="form-horizontal" role="form" files = "true" enctype = "multipart/form-data" method="POST" action="{{ url('institute/register-mother') }}">
+<div class="row">
+	<div class="col-md-8">
+		<div class="box box-info">
+	        <div class="box-header with-border">
+	          <h3 class="box-title">Mothers Information</h3>
+	        </div><!-- /.box-header -->
+	       
+	          <div class="box-body">
+
+	            <div class="panel-body">
+
+	            	<form class="form-horizontal" role="form" files = "true" enctype = "multipart/form-data" method="POST" action="{{ url('institute/register-mother') }}">
 
 						<div class="form-group required{{ $errors->has('name') ? ' has-error' : '' }}">
 							<label for="pic1" class="col-md-4 control-label">Image:</label>
 
-							<div class="col-md-2">
+							<div class="col-md-4">
 								<input type="file" class="form-control" name="pic1" accept="image/*" value="{{ old('name') }}">
 
 								@if ($errors->has('name'))
@@ -20,7 +26,15 @@
 								</span>
 								@endif
 							</div>
+
+							<div class="col-md-2">
+								<div id="container">
+									<img src="{{asset('/motherPictures/1460723195_pic1.jpg')}}" alt="No Image" style="width: 70px; height: 70px" ">
+								</div>
+							</div>
 						</div>
+
+
 						{!! csrf_field() !!}
 
 						<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -353,10 +367,21 @@
 						</form>
 					</div>
 
-				</div><!--Panel Body Ends-->
-			</div>
+		            
 
-		</div>
+				</div> <!--Panel Body Ends-->
+
+	          </div><!-- /.box-body -->
+	          
+	          <div class="box-footer">
+	         
+	           
+	          </div><!-- /.box-footer -->
+	      </form>
+	      </div><!-- /.box --> 
+
+	              
 	</div>
+</div>
 
-	@endsection
+@stop

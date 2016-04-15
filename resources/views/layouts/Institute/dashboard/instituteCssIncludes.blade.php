@@ -28,8 +28,7 @@
 	<!-- Our added additional dependencies start -->
 	<!-- Datepicker -->
 	<link rel="stylesheet" href="{{asset('js/jquery-ui.css')}}">
-	<script src="{{asset('js/jquery-1.10.2.js')}}"></script>
-	<script src="{{asset('js/jquery-ui.js')}}"></script>
+	
 	<link rel="stylesheet" href="{{asset('cssFiles/mapStyle.css')}}">
 
 	<!-- Data Table non-responsive -->

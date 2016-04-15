@@ -28,7 +28,7 @@ class InstitutionController extends Controller
 
         if ($request->hasFile($filedName)) {
             $extention=$request->file($filedName)->getClientOriginalExtension();
-//$org_name_image_1=$request->file('image_1')->getClientOriginalName();
+
             $name=time().'_'.$filedName.'.'.$extention;
             $request->file($filedName)->move($destinationPath, $name);
             return $name;            
@@ -146,7 +146,7 @@ class InstitutionController extends Controller
 
         print_r($child);
 //INPUT CHILD
-/*
+
         Child::create([
             'id' =>$child['id'],
             'mothers_id' =>$child['mothers_id'],
@@ -156,7 +156,7 @@ class InstitutionController extends Controller
             'birthCertNo' =>$child['birthCertNo'],
             'blood_group' =>$child['blood_group']
             ]);
-*/
+
         return "Added Child";
 
     }
@@ -226,5 +226,15 @@ class InstitutionController extends Controller
             'visitors' => $visitors
             ]);*/
         return $pdf->stream('Mother_Report.pdf');
+    }
+
+    public function getSpecificMotherInfo($motherId){
+
+            $fromMotherTable = Mother::where('id', $motherId)->get();
+            $fromUserTable = User::where('foreignid',$motherId)->get();
+
+            
+        
+        return view('pages.institute.motherPages.viewEditMotherInfo', compact('fromMotherTable' , 'fromUserTable'));
     }
 }
