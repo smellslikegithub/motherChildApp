@@ -14,14 +14,22 @@ Laravel is accessible, yet powerful, providing powerful tools needed for large, 
 
 Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-## Contributing
+## Web application installtion and running instructions
+Prerequisites:
+* Install PHP and set php env variable inyour windows machine, so that you cat run commands using php from powershell in windows
+	* You can also install wamp server, free tool for getting php, and MYSQL server (We need both)
+	* Once wamp is installed go to it's root directory, then look for a folder called php, and inside the bin folder, look for php.exe. Add 	this path to windows env variable (PATH)
+* install composer (Dependency manager for laravel and PHP)
+* run the wamp server by typing localhost
+* Go to the phpmyadmin page (Username = root, password = ); passwrod is empty, and create a empty database called mother_child
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+1. go to the root directory of the folder of the web-application
+2. run command "php artisan key:generate" // env key generator
+3. run command "php artisan migrate" // Create all the tables for the application
+4. run command "php artisan db:seed" // I have made a seeder that will seed preliminary database. 
+5. run command "php -S localhost:8000 -t public" // this command will make the application run live on the server
+6. run localhost:8000 in your browser
+7. You can login using the credentials Username: institute@hackathon.com ; Password: 123456
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
