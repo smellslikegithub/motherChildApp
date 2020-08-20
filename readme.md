@@ -1,6 +1,8 @@
 
 The motive of the proposed web based/mobile application is to connect all expectant mothers and their newborns under one umbrella by keeping track of their weekly/monthly health records, health issues while also localizing them to make any health-driven actions faster and effective in rural areas. Technology has yet to have a firm grasp on the locals in rural areas, unlike the situation in the urban areas, where technology has advanced significantly, yet the bridge between rural and urban health development remains less substantial. The proposed solution can provide concerned individuals with different sets of data, involving health and living conditions, which would help deploy health care related solutions in rural areas with more finesse and efficiency. This solution would promote the people to avail the technological health care from the valid sources around their zone as it connects the user of the applications to nearby help sources in the form of hospitals and NGOs.
 
+Source: https://ieeexplore.ieee.org/document/7860257
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
