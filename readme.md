@@ -16,11 +16,11 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 
 ## Web application installtion and running instructions
 Prerequisites:
-* Install PHP and set php env variable inyour windows machine, so that you cat run commands using php from powershell in windows
-	* You can also install wamp server, free tool for getting php, and MYSQL server (We need both)
-	* Once wamp is installed go to it's root directory, then look for a folder called php, and inside the bin folder, look for php.exe. Add 	this path to windows env variable (PATH)
+* Install PHP and set php env variable inyour windows machine, so that you can run commands using php from powershell in windows
+	* You can also install wamp server, a free tool for getting php, and MYSQL server (We need both)
+	* Once wamp is installed, go to its root directory, then look for a folder called php, go in it. Now go inside the bin folder, look for php.exe. Add the path of the exe file to windows env variable (PATH)
 * install composer (Dependency manager for laravel and PHP)
-* run the wamp server by typing localhost
+* run the wamp server. 
 * Go to the phpmyadmin page (Username = root, password = ); passwrod is empty, and create a empty database called mother_child
 
 
