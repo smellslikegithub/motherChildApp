@@ -8,16 +8,11 @@ The motive of the proposed web based/mobile application is to connect all expect
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
 [![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
-
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
-
+This application was built using the laravel framework.
 ## Official Documentation
-
 Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-## Web application installtion and running instructions
+## Web application installation and running instructions
 Prerequisites:
 * Install PHP and set php env variable inyour windows machine, so that you can run commands using php from powershell in windows
 	* You can also install wamp server, a free tool for getting php, and MYSQL server (We need both)
